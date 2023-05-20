@@ -1,10 +1,12 @@
 import StyledDesignModeBtn from './DesignModeBtn.styled'
-import { useAppDispatch } from '../../hooks/redux/reduxHooks'
+import { useAppDispatch, useAppSelector } from '../../hooks/redux/reduxHooks'
+import { setMode } from '../../features/modeSlice'
 
 const DesignModeBtn = ({children}: ModeButtonPropType) => {
   const dispatch = useAppDispatch()
+  const mode = useAppSelector(state => state.modeSlice.value.mode)
   return (
-    <StyledDesignModeBtn onClick={() => console.log('test')}>{children}</StyledDesignModeBtn>
+    <StyledDesignModeBtn onClick={() => dispatch(setMode('design'))} mode={mode}>{children}</StyledDesignModeBtn>
   )
 }
 

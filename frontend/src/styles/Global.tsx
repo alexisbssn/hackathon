@@ -12,6 +12,7 @@ export const GlobalStyle = createGlobalStyle`
     body {
         height: 100vh;
         width: 100vw;
+        font-family: 'Roboto Mono', monospace;
         
     }
     div[id=root]{

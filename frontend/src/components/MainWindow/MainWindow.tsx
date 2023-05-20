@@ -1,7 +1,7 @@
 import { useAppDispatch } from "../../hooks/redux/reduxHooks"
 import DesignModeBtn from "../DesignModeBtn/DesignModeBtn"
 import InteractModeBtn from "../InteractModeBtn/InteractModeBtn"
-import StyledModeButtonContainer from "../ModeButton/ModeButtonContainer.styled"
+import StyledModeButtonContainer from "../ModeButtonContainer/ModeButtonContainer.styled"
 import StyledMainWindow from "./MainWindow.styled"
 
 const MainWindow = () => {

@@ -1,14 +1,12 @@
 /// <reference types="vite/client" />
 
-
-
 type Theme = {
 	colors: {
-        grey_light: string
-        grey_dark: string
-        lines_light: string
-        white: string
-        purple: string
+		grey_light: string
+		grey_dark: string
+		lines_light: string
+		white: string
+		purple: string
 	}
 	mediaQueries: {
 		desktop: string
@@ -22,24 +20,10 @@ type Theme = {
 	}
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ////////Buttons
 
 type ModeButtonPropType = {
 	children: React.ReactNode
 }
+
+type Mode = "design" | "interact"

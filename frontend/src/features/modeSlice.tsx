@@ -1,8 +1,8 @@
-import { createSlice } from "@reduxjs/toolkit"
+import { PayloadAction, createSlice } from "@reduxjs/toolkit"
 
 type modeSliceType = {
 	value: {
-		mode: "design" | 'interact'
+		mode: Mode
 	}
 }
 
@@ -16,8 +16,8 @@ const modeSlice = createSlice({
 	name: "mode_slice",
 	initialState,
 	reducers: {
-		setMode: (state) => {
-			return state
+		setMode: (state, action: PayloadAction<Mode>) => {
+			state.value.mode = action.payload
 		},
 	},
 })
