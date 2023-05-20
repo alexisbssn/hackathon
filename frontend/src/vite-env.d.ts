@@ -21,3 +21,25 @@ type Theme = {
 		fast: string
 	}
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+////////Buttons
+
+type ModeButtonPropType = {
+	children: React.ReactNode
+}

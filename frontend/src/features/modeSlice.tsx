@@ -2,23 +2,13 @@ import { createSlice } from "@reduxjs/toolkit"
 
 type modeSliceType = {
 	value: {
-		age: number | undefined
-		alignment: string
-		background: string
-		character: string
-		generateMore: string
-		race: string
+		mode: "design" | 'interact'
 	}
 }
 
 const initialState: modeSliceType = {
 	value: {
-		age: undefined,
-		alignment: "",
-		background: "",
-		character: "",
-		generateMore: "",
-		race: "",
+		mode: 'design'
 	},
 }
 
