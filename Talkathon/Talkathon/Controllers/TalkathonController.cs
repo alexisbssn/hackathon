@@ -9,15 +9,15 @@ namespace Talkathon.Controllers
     [ApiController]
     public class TalkathonController : ControllerBase
     {
-        [HttpPost]
-        public string GenerateBackground(CharacterAttributes attributes) 
+        [HttpPost("GenerateBackground")]
+        public string GenerateBackground([FromBody] GenerateBackgroundRequestPayload payload) 
         {
             return "Bob the builder is a 35-year-old man with an orange shirt and a jeans jumpsuit that is an animated character for a children's TV show. He's always in a good mood.";
         }
 
         // POST api/<TalkathonController>
-        [HttpPost]
-        public string AnswerTo([FromBody] CharacterAttributes characterAttributes, [FromBody] string prompt)
+        [HttpPost("AnswerTo")]
+        public string AnswerTo([FromBody] AnswerToRequestPayload payload)
         {
             return "Can we do it? Yes we can!";
         }

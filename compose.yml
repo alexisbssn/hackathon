@@ -10,3 +10,10 @@ services:
       - /app/node_modules
     tty: true
     stdin_open: true
+
+  backend:
+    build: 
+      context: ./Talkathon
+      dockerfile: Talkathon/Dockerfile
+    ports: 
+      - 8080:80
