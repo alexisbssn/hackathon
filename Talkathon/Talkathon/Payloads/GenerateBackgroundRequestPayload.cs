@@ -1,12 +1,10 @@
-﻿namespace Talkathon.Payloads
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace Talkathon.Payloads
 {
     public class GenerateBackgroundRequestPayload
     {
-        public GenerateBackgroundRequestPayload(CharacterAttributes characterAttributes)
-        {
-            CharacterAttributes = characterAttributes;
-        }
-
-        public CharacterAttributes CharacterAttributes { get; set; }
+        [Required]
+        public CharacterAttributes? CharacterAttributes { get; set; }
     }
 }

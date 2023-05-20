@@ -1,6 +1,6 @@
 ﻿namespace Talkathon.Payloads
 {
-    public enum CharacterClass
+    public enum Race
     {
         Human,
         Elf,
