@@ -27,3 +27,11 @@ type ModeButtonPropType = {
 }
 
 type Mode = "design" | "interact"
+
+type Active = {
+	active: boolean
+}
+
+type UserInputType = {
+	type: 'text' | 'button' | 'number'
+}
