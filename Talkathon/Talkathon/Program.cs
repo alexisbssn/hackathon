@@ -3,6 +3,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Options;
 using Talkathon;
+using Talkathon.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -12,9 +13,10 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-//builder.Services.AddUserSecrets<Startup>();
 
-//builder.Services.Configure<Secrets>(Configuration);
+RegisterConfiguration(builder);
+
+RegisterServices(builder.Services);
 
 var app = builder.Build();
 
@@ -32,3 +34,20 @@ app.UseAuthorization();
 app.MapControllers();
 
 app.Run();
+
+
+void RegisterConfiguration(WebApplicationBuilder builder)
+{
+    IConfigurationRoot configuration = new ConfigurationBuilder()
+            .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true)
+            .AddEnvironmentVariables()
+            .AddUserSecrets<Program>()
+            .Build();
+
+    builder.Services.Configure<Secrets>(configuration);
+
+}
+void RegisterServices(IServiceCollection services)
+{
+    services.AddSingleton<IChatGptService, ChatGptService>();
+}

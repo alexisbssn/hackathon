@@ -1,12 +1,20 @@
-﻿namespace Talkathon.Services
+﻿using Microsoft.Extensions.Options;
+using OpenAI_API;
+
+namespace Talkathon.Services
 {
     public class ChatGptService: IChatGptService
     {
-        public ChatGptService() { }
-
-        public string Generate(string prompt)
+        public ChatGptService(IOptions<Secrets> secrets)
         {
-            return prompt;
+            Api = new OpenAI_API.OpenAIAPI(secrets.Value.ChatGptApiKey);
+        }
+
+        public OpenAIAPI Api { get; }
+
+        public async Task<string> Generate(string prompt)
+        {
+            return await Api.Completions.GetCompletion(prompt);
         }
     }
 }

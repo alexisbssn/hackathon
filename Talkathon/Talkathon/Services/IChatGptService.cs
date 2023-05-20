@@ -2,6 +2,6 @@
 {
     public interface IChatGptService
     {
-        public string Generate(string prompt);
+        public Task<string> Generate(string prompt);
     }
 }
