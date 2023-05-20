@@ -9,7 +9,7 @@ namespace Talkathon.Payloads
         [Required]
         public int? Age { get; set; }
         [Required]
-        public Race? Race { get; set; }
+        public string? Race { get; set; }
         [Required]
         public string? Background { get; set; }
     }
