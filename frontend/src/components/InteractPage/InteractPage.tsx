@@ -7,11 +7,12 @@ const InteractPage = ({active}: Active) => {
   return (
     <StyledInteractPage active={active}>
       <InteractSection>
-        <LeftSection></LeftSection>
-        <RightSection></RightSection>
+        <LeftSection handlePrompt={() => {}}></LeftSection>
+        <RightSection handlePrompt={() => {}}></RightSection>
       </InteractSection>
-      
-      <br/>results
+      <InteractSection>
+        <br/>results
+      </InteractSection>
     </StyledInteractPage>
   )
 }

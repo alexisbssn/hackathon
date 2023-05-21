@@ -1,10 +1,10 @@
 import styled from "styled-components";
 
 
-const StyledInteractPage = styled.div`
+const InteractSection = styled.div`
     display: flex;
     flex-direction: row;
     justify-content: space-between;
 `
 
-export default StyledInteractPage
+export default InteractSection
