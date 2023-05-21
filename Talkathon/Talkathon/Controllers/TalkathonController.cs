@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Options;
+using OpenAI_API.Moderation;
 using Talkathon.Payloads;
 using Talkathon.Services;
 
@@ -28,7 +29,8 @@ namespace Talkathon.Controllers
                 $"Background: {payload.CharacterAttributes.Background}\n" +
                 $"\nCan you please say something new that could be added to the Background?";
 
-            return Ok(await ChatGptService.Generate(prompt));
+            SimpleResponse response = new SimpleResponse(await ChatGptService.Generate(prompt));
+            return Ok(response);
         }
 
         // POST api/<TalkathonController>
@@ -41,9 +43,10 @@ namespace Talkathon.Controllers
                 $"Race: {payload.CharacterAttributes.Race}\n" +
                 $"Background: {payload.CharacterAttributes.Background}\n" +
                 $"\nIn the voice of this character, answer to the following statement:\n" +
-                $"\n{payload.Prompt}";
+            $"\n{payload.Prompt}";
 
-            return Ok(await ChatGptService.Generate(prompt));
+            SimpleResponse response = new SimpleResponse(await ChatGptService.Generate(prompt));
+            return Ok(response);
         }
     }
 }
