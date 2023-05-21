@@ -51,11 +51,11 @@ const DesignPage = ({ active }: Active) => {
 		}
 		generate(dataReady)
 			.unwrap()
-			.then((response) => {
+			.then((response: string) => {
 				console.log(response)
 				setGenerateMoreText(response)
 			})
-			.catch((error) => console.log(error))
+			.catch((error: string) => console.log(error))
 	})
 
 	return (

@@ -14,6 +14,14 @@ export const apiSlice = createApi({
         body: background,
       }),
     }),
+
+    answerTo: builder.mutation<ResponseType, DesignFormData>({
+      query: (background) => ({
+        url: '/api/Talkathon/AnswerTo',
+        method: 'POST',
+        body: background,
+      }),
+    }),
   }),
 });
 
