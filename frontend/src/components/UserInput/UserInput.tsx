@@ -7,13 +7,14 @@ const UserInput = ({
 	register,
 	name,
 }: { placeHolder: string } & UserInputType) => {
+	console.log(register)
 
 	if (register && name) {
 		return (
 			<StyledUserInput
 				placeholder={placeHolder}
 				type={type}
-				{...(register && name && register(name))}
+				{...(register && name && register(`characterAttributes.${name}`))}
 			/>
 		)
 	} else {

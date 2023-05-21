@@ -45,10 +45,12 @@ type UserTextAreaType = {
 }
 
 type DesignFormData = {
-	name: string
-	age: string 
-	race: string
-	background: string
+	characterAttributes: {
+		name: string
+		age: number
+		race: string
+		background: string
+	}
 }
 
 type FormFieldType = "name" | "age" | "race" | "background"

@@ -5,13 +5,13 @@ const UserTextArea = ({
 	placeHolder,
 	register,
 	name,
-}: { placeHolder: string } & UserTextAreaType) => {
+}: { placeHolder: string } & UserTextAreaType & {content: string}) => {
 
 	if (register && name) {
 		return (
 			<StyledUserTextArea
 				placeholder={placeHolder}
-				{...(register && name && register(name))}
+				{...(register && name && register(`characterAttributes.${name}`))}
 			/>
 		)
 	} else {

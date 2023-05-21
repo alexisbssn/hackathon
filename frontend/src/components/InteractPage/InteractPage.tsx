@@ -1,3 +1,4 @@
+import { Active } from '../../vite-env'
 import StyledInteractPage from './InteractPage.styled'
 import InteractSection from './InteractSection'
 import LeftSection from './LeftSection/LeftSection'

@@ -1,4 +1,5 @@
 import { configureStore } from "@reduxjs/toolkit"
+import {apiSlice} from '../features/api/designApiSlice'
 
 
 import modeSliceReducer from "../features/modeSlice"
@@ -6,7 +7,8 @@ import modeSliceReducer from "../features/modeSlice"
 
 export const store = configureStore({
     reducer: {
-        modeSlice: modeSliceReducer
+        modeSlice: modeSliceReducer,
+        api: apiSlice.reducer
     }
 })
 
