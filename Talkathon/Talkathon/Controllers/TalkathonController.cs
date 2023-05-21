@@ -14,9 +14,8 @@ namespace Talkathon.Controllers
         public IChatGptService ChatGptService { get; }
         public IOptions<Secrets> Secrets { get; }
 
-        public TalkathonController(IChatGptService chatGptService, IOptions<Secrets> secrets) {
+        public TalkathonController(IChatGptService chatGptService) {
             ChatGptService = chatGptService;
-            this.Secrets = secrets;
         }
 
         [HttpPost("GenerateBackground")]
@@ -27,7 +26,7 @@ namespace Talkathon.Controllers
                 $"Age: {payload.CharacterAttributes.Age}\n" +
                 $"Race: {payload.CharacterAttributes.Race}\n" +
                 $"Background: {payload.CharacterAttributes.Background}\n" +
-                $"\nCan you please complete the Background?";
+                $"\nCan you please say something new that could be added to the Background?";
 
             return await ChatGptService.Generate(prompt);
         }
