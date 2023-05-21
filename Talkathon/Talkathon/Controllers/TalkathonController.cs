@@ -19,7 +19,7 @@ namespace Talkathon.Controllers
         }
 
         [HttpPost("GenerateBackground")]
-        public async Task<string> GenerateBackground([FromBody] GenerateBackgroundRequestPayload payload) 
+        public async Task<IActionResult> GenerateBackground([FromBody] GenerateBackgroundRequestPayload payload) 
         {
             string prompt = "I have the start to a character's background, here it is:\n" +
                 $"Name: {payload.CharacterAttributes.Name}\n" +
@@ -28,12 +28,12 @@ namespace Talkathon.Controllers
                 $"Background: {payload.CharacterAttributes.Background}\n" +
                 $"\nCan you please say something new that could be added to the Background?";
 
-            return await ChatGptService.Generate(prompt);
+            return Ok(await ChatGptService.Generate(prompt));
         }
 
         // POST api/<TalkathonController>
         [HttpPost("AnswerTo")]
-        public async Task<string> AnswerTo([FromBody] AnswerToRequestPayload payload)
+        public async Task<IActionResult> AnswerTo([FromBody] AnswerToRequestPayload payload)
         {
             string prompt = "I have a character's background, here it is:\n" +
                 $"Name: {payload.CharacterAttributes.Name}\n" +
@@ -43,7 +43,7 @@ namespace Talkathon.Controllers
                 $"\nIn the voice of this character, answer to the following statement:\n" +
                 $"\n{payload.Prompt}";
 
-            return await ChatGptService.Generate(prompt);
+            return Ok(await ChatGptService.Generate(prompt));
         }
     }
 }

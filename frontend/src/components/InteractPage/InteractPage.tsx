@@ -1,18 +1,22 @@
-import { Active } from '../../vite-env'
+import { useState } from 'react'
 import StyledInteractPage from './InteractPage.styled'
 import InteractSection from './InteractSection'
 import LeftSection from './LeftSection/LeftSection'
 import RightSection from './RightSection/RightSection'
+import AnswerBox from './AnswerBox/AnswerBox'
 
 const InteractPage = ({active}: Active) => {
+
+  const [promptResult, setPromptResult] = useState('');
+
   return (
     <StyledInteractPage active={active}>
       <InteractSection>
-        <LeftSection handlePrompt={() => {}}></LeftSection>
-        <RightSection handlePrompt={() => {}}></RightSection>
+        <LeftSection handlePrompt={() => {setPromptResult("quick replied")}}></LeftSection>
+        <RightSection handlePrompt={() => {setPromptResult("prompted")}}></RightSection>
       </InteractSection>
       <InteractSection>
-        <br/>results
+        <AnswerBox promptContent={promptResult}></AnswerBox>
       </InteractSection>
     </StyledInteractPage>
   )
