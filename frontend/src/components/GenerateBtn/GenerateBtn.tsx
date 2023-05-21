@@ -1,8 +1,8 @@
 import StyledGenerateBtn from './GenerateBtn.styled'
 
-const GenerateBtn = () => {
+const GenerateBtn = ({handleClick}: {handleClick: () => void}) => {
   return (
-    <StyledGenerateBtn>Generate</StyledGenerateBtn>
+    <StyledGenerateBtn onClick={handleClick} type='button'>Generate</StyledGenerateBtn>
   )
 }
 

@@ -1,8 +1,8 @@
 import StyledSaveBtn from "./SaveBtn.styled"
 
-const SaveBtn = () => {
+const SaveBtn = ({handleClick}: {handleClick: () => void}) => {
   return (
-    <StyledSaveBtn>Save</StyledSaveBtn>
+    <StyledSaveBtn onClick={handleClick} type="button">Save</StyledSaveBtn>
   )
 }
 

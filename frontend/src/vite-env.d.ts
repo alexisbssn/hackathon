@@ -1,4 +1,5 @@
 /// <reference types="vite/client" />
+import { UseFormRegister } from "react-hook-form"
 
 type Theme = {
 	colors: {
@@ -33,5 +34,21 @@ type Active = {
 }
 
 type UserInputType = {
-	type: 'text' | 'button' | 'number'
+	type: "text" | "button" | "number"
+	register?: UseFormRegister<DesignFormData>
+	name?: FormFieldType
 }
+
+type UserTextAreaType = {
+	register?: UseFormRegister<DesignFormData>
+	name?: FormFieldType
+}
+
+type DesignFormData = {
+	name: string
+	age: number
+	race: string
+	background: string
+}
+
+type FormFieldType = "name" | "age" | "race" | "background"

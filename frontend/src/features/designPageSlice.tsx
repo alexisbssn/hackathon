@@ -3,7 +3,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 type designPageSliceType = {
     value : {
-        age: number | undefined
+        age: number 
 		alignment: string
 		background: string
 		character: string
@@ -11,3 +11,22 @@ type designPageSliceType = {
 		race: string
     }
 }
+
+const initialState: designPageSliceType = {
+	value: {
+		age: 0,
+		alignment: "",
+		background: "",
+		character: "",
+		generateMore: "",
+		race: ""
+	}
+}
+
+const designPageSlice = createSlice({
+	name: 'designPage_slice',
+	initialState,
+	reducers: {
+		
+	}
+})
